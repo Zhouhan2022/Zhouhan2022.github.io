@@ -1,0 +1,12 @@
+site_name: 跳波老鱼缸
+theme:
+  name: material
+  language: zh
+
+nav:
+  - 主页: index.md
+  - 闲杂:
+    - 闲杂首页: course/index.md
+    - 示例文章: course/example.md
+  - 友链: friends/index.md
+  - 关于: about/index.md
