@@ -1,4 +1,5 @@
 site_name: 跳波老鱼缸
+site_url: https://zhouhan2022.github.io
 theme:
   name: material
   language: zh

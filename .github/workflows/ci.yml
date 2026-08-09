@@ -6,16 +6,11 @@ on:
       - main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -31,14 +26,8 @@ jobs:
       - name: 构建网站
         run: mkdocs build
 
-      - name: 配置 Pages
-        uses: actions/configure-pages@v4
-
-      - name: 上传文件
-        uses: actions/upload-pages-artifact@v3
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./site
-
-      - name: 部署
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
