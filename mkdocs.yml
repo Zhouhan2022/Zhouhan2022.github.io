@@ -6,6 +6,9 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: zh
+  features:
+    - content.action.edit
+    - content.action.view
 
 nav:
   - 主页: index.md
