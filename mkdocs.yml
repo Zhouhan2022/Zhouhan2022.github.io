@@ -1,5 +1,8 @@
 site_name: 跳波老鱼缸
 site_url: https://zhouhan2022.github.io
+repo_url: https://github.com/Zhouhan2022/Zhouhan2022.github.io
+repo_name: Zhouhan2022/Zhouhan2022.github.io
+edit_uri: edit/main/docs/
 theme:
   name: material
   language: zh
