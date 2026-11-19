@@ -3,6 +3,8 @@ site_url: https://zhouhan2022.github.io
 repo_url: https://github.com/Zhouhan2022/Zhouhan2022.github.io
 repo_name: Zhouhan2022/Zhouhan2022.github.io
 edit_uri: edit/main/docs/
+hooks:
+  - hooks/copy_raw_md.py
 theme:
   name: material
   language: zh
@@ -12,8 +14,10 @@ theme:
 
 extra_css:
   - assets/modules/canvas/canvas.css
+  - assets/modules/editor/editor.css
 extra_javascript:
   - assets/modules/canvas/canvas.js
+  - assets/modules/editor/editor.js
 
 nav:
   - 主页: index.md
