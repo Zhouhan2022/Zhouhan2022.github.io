@@ -242,8 +242,14 @@
     if (pencil && pencil.parentNode) {
       pencil.parentNode.insertBefore(btn, pencil.nextSibling);
     } else {
-      btn.classList.add('mde-float');
-      document.body.appendChild(btn);
+      var article = document.querySelector('.md-content__inner');
+      var h1 = article ? article.querySelector('h1') : null;
+      if (h1) h1.insertAdjacentElement('afterend', btn);
+      else if (article) article.prepend(btn);
+      else {
+        btn.classList.add('mde-float');
+        document.body.appendChild(btn);
+      }
     }
   }
 
