@@ -1,4 +1,4 @@
-/* 画布模块样式（独立模块） */
+/* 画布模块 v2 样式：页面式画布，文字默认无边框，图片可自由摆放 */
 .canvas-embed {
   margin: 1.5rem 0;
   border: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
@@ -31,33 +31,48 @@
 .cv-empty { color: #888; }
 .cv-viewport {
   position: relative;
-  height: 420px;
+  height: 560px;
   overflow: hidden;
-  background: #fff;
-  touch-action: none;
+  background: #eceff1;
   cursor: grab;
+  touch-action: none;
 }
 .cv-viewport:active { cursor: grabbing; }
-.cv-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
-.cv-block {
+.cv-page {
   position: absolute;
+  left: 0;
+  top: 0;
+  width: 1000px;
+  height: 1400px;
   background: #fff;
-  border: 1px solid #cfd8dc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
-  padding: 8px 10px;
-  font-size: 14px;
-  line-height: 1.45;
-  user-select: none;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .18);
+  transform-origin: 0 0;
 }
-.cv-block.cv-editing { cursor: move; border-style: dashed; }
-.cv-block .cv-text { white-space: pre-wrap; word-break: break-word; }
-.cv-block .cv-text[contenteditable="true"] {
+.cv-el { position: absolute; min-width: 40px; cursor: default; }
+.cv-txt {
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px dashed transparent;
+  border-radius: 6px;
+  min-height: 1em;
+}
+.cv-boxed .cv-txt {
+  border: 1px solid #cfd8dc;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+.cv-img { display: block; width: 100%; height: auto; }
+.cv-editing { cursor: move; }
+.cv-editing .cv-txt,
+.cv-editing .cv-img { outline: 1px dashed #90caf9; outline-offset: 2px; }
+.cv-editing .cv-txt[contenteditable="true"] {
   outline: 2px solid #4f8cff;
-  border-radius: 4px;
   user-select: text;
   cursor: text;
   background: #fffde7;
+  border-radius: 4px;
 }
 .cv-del {
   position: absolute;
