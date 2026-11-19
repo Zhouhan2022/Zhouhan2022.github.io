@@ -8,9 +8,6 @@ hooks:
 theme:
   name: material
   language: zh
-  features:
-    - content.action.edit
-    - content.action.view
 
 extra_css:
   - assets/modules/canvas/canvas.css
