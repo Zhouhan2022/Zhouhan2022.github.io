@@ -59,9 +59,10 @@
   }
   function navIndent(line) { var m = /^(\s*)-\s/.exec(line); return m ? m[1].length : -1; }
   function navTP(line) {
-    var m = /^\s*-\s*([^:]+):\s*(.+?)\s*$/.exec(line);
+    var m = /^\s*-\s*([^:]+):\s*(.*)$/.exec(line);
     if (!m) return null;
-    return { title: m[1].trim().replace(/^["']|["']$/g, ''), path: m[2].trim().replace(/^["']|["']$/g, '') };
+    var path = m[2].trim().replace(/^["']|["']$/g, '');
+    return { title: m[1].trim().replace(/^["']|["']$/g, ''), path: path || null };
   }
 
   /** 把 nav 解析为树：{ title, path|null, indent, line, children[] } */
