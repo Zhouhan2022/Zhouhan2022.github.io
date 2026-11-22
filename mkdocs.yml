@@ -14,9 +14,11 @@ theme:
 extra_css:
   - assets/modules/canvas/canvas.css
   - assets/modules/editor/editor.css
+  - assets/modules/admin/admin.css
 extra_javascript:
   - assets/modules/canvas/canvas.js
   - assets/modules/editor/editor.js
+  - assets/modules/admin/admin.js
 
 nav:
   - 主页: index.md
